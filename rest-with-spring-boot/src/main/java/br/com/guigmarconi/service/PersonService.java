@@ -1,10 +1,13 @@
 package br.com.guigmarconi.service;
 
 import br.com.guigmarconi.controllers.TestLogController;
-import br.com.guigmarconi.data.dto.PersonDTO;
+import br.com.guigmarconi.data.dto.v1.PersonDTO;
+import br.com.guigmarconi.data.dto.v2.PersonDTOV2;
 import br.com.guigmarconi.exception.ResourceNotFoundException;
 import static br.com.guigmarconi.mapper.ObjectMapper.parseListObject;
 import static br.com.guigmarconi.mapper.ObjectMapper.parseObject;
+
+import br.com.guigmarconi.mapper.custom.PersonMapper;
 import br.com.guigmarconi.model.Person;
 import br.com.guigmarconi.repository.PersonRepository;
 import org.slf4j.Logger;
@@ -22,6 +25,9 @@ public class PersonService {
 
     @Autowired
     PersonRepository personRepository;
+
+    @Autowired
+    PersonMapper converter;
     private Logger logger = LoggerFactory.getLogger(TestLogController.class.getName());
 
     public PersonDTO findById(Long id){
@@ -45,6 +51,14 @@ public class PersonService {
         var entity = parseObject(person, Person.class);
 
         return parseObject(personRepository.save(entity), PersonDTO.class);
+    }
+
+    public PersonDTOV2 createPersonV2(PersonDTOV2 person){
+        logger.info("Creating one Person V2!");
+
+        var entity = converter.convertDTOtoEntity(person);
+
+        return converter.convertEntityToDTO(personRepository.save(entity));
     }
 
     public PersonDTO updatePerson(PersonDTO person){

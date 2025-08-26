@@ -1,6 +1,6 @@
 package br.com.guigmarconi.unittestes.mapper;
 
-import br.com.guigmarconi.data.dto.PersonDTO;
+import br.com.guigmarconi.data.dto.v1.PersonDTO;
 import br.com.guigmarconi.model.Person;
 import br.com.guigmarconi.unittestes.mapper.mocks.MockPerson;
 import org.junit.jupiter.api.BeforeEach;
