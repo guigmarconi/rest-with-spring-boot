@@ -1,6 +1,5 @@
 package br.com.guigmarconi.mapper.custom;
 
-import br.com.guigmarconi.data.dto.v1.PersonDTO;
 import br.com.guigmarconi.data.dto.v2.PersonDTOV2;
 import br.com.guigmarconi.model.Person;
 import org.springframework.stereotype.Service;
