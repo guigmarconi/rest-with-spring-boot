@@ -15,5 +15,5 @@ spring:
     open-in-view: false
 logging:
   level:
-    #root: WARN
-    br.com.guigmarconi: DEBUG
+    root: INFO
+    #br.com.guigmarconi: DEBUG

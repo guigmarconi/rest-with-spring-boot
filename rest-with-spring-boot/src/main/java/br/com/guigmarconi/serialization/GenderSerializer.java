@@ -1,4 +1,4 @@
-package br.com.guigmarconi.serializer;
+package br.com.guigmarconi.serialization;
 
 import com.fasterxml.jackson.core.JsonGenerator;
 import com.fasterxml.jackson.databind.JsonSerializer;
