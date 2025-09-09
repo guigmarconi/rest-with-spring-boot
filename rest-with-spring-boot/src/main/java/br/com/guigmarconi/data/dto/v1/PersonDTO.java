@@ -2,11 +2,12 @@ package br.com.guigmarconi.data.dto.v1;
 
 import br.com.guigmarconi.serialization.GenderSerializer;
 import com.fasterxml.jackson.databind.annotation.JsonSerialize;
+import org.springframework.hateoas.RepresentationModel;
 
 import java.io.Serializable;
 import java.util.Objects;
 
-public class PersonDTO implements Serializable {
+public class PersonDTO extends RepresentationModel<PersonDTO> implements Serializable {
 
     private static final Long serialVersionId = 1L;
 
